@@ -148,25 +148,33 @@ Built-in self-improvement: when the agent is corrected, it logs the mistake, tra
 
 ## Installation
 
-### Claude Code
-
-Copy the `agent-setup/` folder into your Claude Code skills directory:
+### One-Line Install
 
 ```bash
-cp -r agent-setup/ ~/.claude/skills/agent-setup/
+git clone https://github.com/grinfinity/soulsmith.git ~/.claude/skills/soulsmith
 ```
 
-Then invoke with `/agent-setup`.
+Then invoke with `/agent-setup` in Claude Code.
+
+### Via npx (cross-agent)
+
+```bash
+npx add-skill grinfinity/soulsmith
+```
+
+Works with Claude Code, Cursor, Amp, VS Code, and other agents that support the Agent Skills spec.
+
+### Manual
+
+Download the repo and copy the contents to `~/.claude/skills/soulsmith/`.
 
 ### OpenClaw
 
-Copy to your OpenClaw skills directory and configure as a skill. The skill uses `AskUserQuestion` for the interview flow.
+Copy to your OpenClaw skills directory and configure as a skill.
 
 ### Other Platforms
 
-The skill is a structured markdown prompt. The platform note at the top explains how to adapt for environments without `AskUserQuestion`:
-
-> Replace all bold-quoted questions with inline questions and wait for the user to respond before proceeding.
+The skill is a structured markdown prompt. Adapt for any platform that can load markdown instructions:
 
 ---
 
